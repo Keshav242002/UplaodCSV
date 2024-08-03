@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Analysis Results</title>
+</head>
+<body>
+    <h1>Data Analysis Results</h1>
+    
+    <h2>First Few Rows</h2>
+    <div>
+        {{ first_rows|safe }}
+    </div>
+
+    <h2>Summary Statistics</h2>
+    <div>
+        {{ summary_stats|safe }}
+    </div>
+
+    <h2>Missing Values</h2>
+    <div>
+        {{ missing_values|safe }}
+    </div>
+
+    <h2>Data Visualization</h2>
+    <div>
+        <img src="data:image/png;base64,{{ plot_url }}" alt="Histogram">
+    </div>
+
+    <a href="{% url 'index' %}">Upload another file</a>
+</body>
+</html>
